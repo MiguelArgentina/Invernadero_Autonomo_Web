@@ -1,0 +1,140 @@
+<!DOCTYPE HTML><html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  body{
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #f0f4c3;
+  }
+  h2, h3{
+    text-align: center;;
+  }
+  .back-button{
+    padding: 8px;
+    height:20px;
+    font-family:sans-serif;
+    margin-right: 5px;
+    background-color: #eee;
+    border:none;
+    border-style:groove;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+
+  }
+  .update-button
+  {
+    padding: 10px;
+    text-decoration: none;
+    border-style:ridge;
+    border-radius: 10px;
+    background-color: #c5e1a5;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    color:#00695c;
+  }
+  input
+  {
+    width: 30px;
+    height: 18px;
+    font-size: 16px;
+    text-align: center;
+    font-family: sans-serif;
+    border-radius: 10px;
+    border: 2px solid #00;
+    padding: 6px;
+  }
+  input.text:focus {
+    background-color: #bbdefb;
+    color: #0d47a1;
+    border: 2px solid #0d47a1;
+
+  }
+  input.text2:focus {
+    background-color: #b2dfdb;
+    color: #004d40;
+    border: 2px solid #004d40;
+  }
+  input.text3:focus {
+    background-color: #ffccbc;
+    color: #bf360c;
+    border: 2px solid #bf360c;
+  }
+  .riego{
+    background-color: #e6ee9c;
+    color:#303f9f;
+    padding: 4px;
+    border-radius: 15px;
+  }
+
+  .temperatura{
+    background-color: #e6ee9c;
+    color:#b71c1c;
+    padding: 4px;
+    border-radius: 15px;
+  }
+
+  .humedad{
+    background-color: #e6ee9c;
+    color:#1b5e20;
+    padding: 4px;
+    border-radius: 15px;
+  }
+  </style>
+</head>
+<body>
+<h2>Invernadero autonomo</h2>
+<span class="config-refresh">
+<a class="back-button" style="float:left; font-weight: bold; color:#00695c" href="/index">Volver</a>
+</span>
+<br><br><br>
+<section class="riego">
+<h3>Configuracion del riego automatico</h3>
+<br><br>
+<div class="textos">Iniciar riego al:
+  <input class="text" type="text" name="hum-min" value="60">
+  % de Humedad
+</div>
+<br><br>
+<div class="textos">Cortar riego al:
+  <input class="text" type="text" name="hum-max" value="90">
+  % de Humedad
+</div>
+<br>
+</section>
+
+<br>
+<section class="temperatura">
+<br>
+<h3>Alarmas por temperatura y humedad ambiente</h3>
+<br><br>
+<div class="textos">Temp. maxima:
+  <input class="text2" type="text" name="temp-max" value="40">
+  &#8451;
+</div>
+<br><br>
+<div class="textos">Temp. minima:
+  <input class="text2" type="text" name="temp-min" value="10">
+  &#8451;
+</div>
+<br>
+</section>
+<br>
+<section class="humedad">
+<br>
+<div class="textos">Hum. maxima:
+  <input class="text3" type="text" name="hum-max" value="70">
+  %
+</div>
+<br>
+</section>
+<br><br>
+<a class="update-button"  href="/update">Actualizar datos</a>
+
+<br>
+</body>
