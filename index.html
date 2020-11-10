@@ -109,8 +109,8 @@ grid-row: 1 / span 3;
 <body>
   <h2>Invernadero autonomo</h2>
 <span class="config-refresh">
-  <a class="refresh-button" style="float:left; color:#0277bd" href="/config">Configurar</a>
-<a class="refresh-button" style="float:right; font-weight: bold; color:#00695c" href="/refresh">Actualizar datos</a>
+  <a class="refresh-button" style="float:left; color:#0277bd" href="/config.html">Configurar</a>
+<a class="refresh-button" style="float:right; font-weight: bold; color:#00695c" onclick="loadParametersOnDom()">Actualizar datos</a>
 
 </span>
 
@@ -154,7 +154,7 @@ grid-row: 1 / span 3;
 
     </div>
     <div class="grid-item">
-      <div>Sector 1 <br> 88 %</div>
+      <div>Sector 1 <br> <span id="sector1">86</span> %</div>
       <form id="formbomba1">
         <input id="regarbomba1" type="button" class="button button-on" value="Regar"
           onclick="ejecutarAccion(this,'jsonbomba1', 'formbomba1')">
@@ -165,18 +165,18 @@ grid-row: 1 / span 3;
       </div>
     </div>
     <div class="grid-item">
-      <div>Sector 2 <br> 76 %</div>
+      <div>Sector 2 <br> <span id="sector2">76</span> %</div>
       <form id="formbomba2" >
         <input id="regarbomba2" type="button" class="button button-on" value="Regar"
           onclick="ejecutarAccion(this,'jsonbomba2', 'formbomba2')">
           <input id="jsonbomba2" type="hidden" name="bomba2" value="1">
       </form>
     <div id="statebomba2">
-      <div id="lightbomba2" class="lightbulb" style="background-color: #a5d6a7;"/></div>
+      <div id="lightbomba2" class="lightbulb" style="background-color: #a5d6a7;"></div>
     </div>
     </div>
     <div class="grid-item">
-      <div>Sector 3 <br> 65 %</div>
+      <div>Sector 3 <br> <span id="sector3">66</span> %</div>
       <form id="formbomba3">
         <input id="regarbomba3" type="button" class="button button-on" value="Regar"
           onclick="ejecutarAccion(this,'jsonbomba3', 'formbomba3')">
@@ -233,13 +233,13 @@ grid-row: 1 / span 3;
       </div>
 
     <div class="grid-item">
-      <div>Sensor 1 <br> 88 %</div>
+      <div>Sensor 1 <br> <span id="humedad1">88</span> %</div>
     </div>
     <div class="grid-item">
-      <div>Sector 2 <br> 86 %</div>
+      <div>Sector 2 <br> <span id="humedad2">86</span> %</div>
     </div>
     <div class="grid-item">
-      <div>Sector 3 <br> 85 %</div>
+      <div>Sector 3 <br> <span id="humedad3">84</span> %</div>
     </div>
   </div>
   <br><br>
@@ -274,13 +274,13 @@ grid-row: 1 / span 3;
       </div>
 
       <div class="grid-item">
-        <div>Sensor 1 <br> 25 &#8451;</div>
+        <div>Sensor 1 <br> <span id="temperatura1">25</span> &#8451;</div>
       </div>
       <div class="grid-item">
-        <div>Sensor 1 <br> 28 &#8451;</div>
+        <div>Sensor 1 <br> <span id="temperatura2">24</span> &#8451;</div>
       </div>
       <div class="grid-item">
-        <div>Sensor 1 <br> 26 &#8451;</div>
+        <div>Sensor 1 <br> <span id="temperatura3">23</span> &#8451;</div>
       </div>
     </div>
 

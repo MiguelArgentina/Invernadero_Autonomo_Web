@@ -6,9 +6,9 @@ $temperatura3=$_POST["temperatura3"]?? null;
 $humedad1=$_POST["humedad1"]?? null;
 $humedad2=$_POST["humedad2"]?? null;
 $humedad3=$_POST["humedad3"]?? null;
-$bomba1=$_POST["bomba1"]?? null;
-$bomba2=$_POST["bomba2"]?? null;
-$bomba3=$_POST["bomba3"]?? null;
+$sector1=$_POST["sector1"]?? null;
+$sector2=$_POST["sector2"]?? null;
+$sector3=$_POST["sector3"]?? null;
 
 $jsonString = file_get_contents('data.json');
 $data = json_decode($jsonString, true);
@@ -49,18 +49,18 @@ foreach ($data as $key => $entry) {
       $data[$key]['valor'] = $humedad3;}
                   break;
 
-      case 'bomba1':
-      if (isset($_POST['bomba1']) && $_POST['bomba1'] != ""){
-      $data[$key]['valor'] = $bomba1;}
+      case 'sector1':
+      if (isset($_POST['sector1']) && $_POST['sector1'] != ""){
+      $data[$key]['valor'] = $sector1;}
                   break;
 
-      case 'bomba2':
-      if (isset($_POST['bomba2']) && $_POST['bomba2'] != ""){
-      $data[$key]['valor'] = $bomba2;}
+      case 'sector2':
+      if (isset($_POST['sector2']) && $_POST['sector2'] != ""){
+      $data[$key]['valor'] = $sector2;}
                   break;
-      case 'bomba3':
-      f (isset($_POST['bomba3']) && $_POST['bomba3'] != ""){
-      $data[$key]['valor'] = $bomba3;}
+      case 'sector3':
+      if (isset($_POST['sector3']) && $_POST['sector3'] != ""){
+      $data[$key]['valor'] = $sector3;}
                   break;
     }
 

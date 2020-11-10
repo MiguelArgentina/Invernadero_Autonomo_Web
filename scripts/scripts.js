@@ -1,17 +1,15 @@
 function loadParametersOnDom() {
-  $.get("pulldata.php",{},function(result) {
-                                            console.log("pullData:");
-                                            console.log(result);
-                                            reRenderPageWithPhpEcho(result);
-                                            }
-  );
+  $.get("pulldata.php", {}, function(result) {
+    console.log("pullData:");
+    console.log(result);
+    reRenderPageWithPhpEcho(result);
+  });
 
-  $.get("pullsettings.php",{},function(result) {
-                                            console.log("pullSettings:");
-                                            console.log(result);
-                                            reRenderPageWithPhpEcho(result);
-                                            }
-  );
+  $.get("pullsettings.php", {}, function(result) {
+    console.log("pullSettings:");
+    console.log(result);
+    reRenderPageWithPhpEcho(result);
+  });
 
 
 }
@@ -131,6 +129,52 @@ function reRenderPageWithPhpEcho(echoJson) {
       case 'humedadambienteminima':
         if (existsInDom('humedadambienteminima')) {
           document.getElementById("humedadambienteminima").value = obj.valor;
+        }
+        break;
+
+      case 'humedad1':
+        if (existsInDom('humedad1')) {
+          document.getElementById("humedad1").innerHTML = obj.valor;
+        }
+        break;
+      case 'humedad2':
+        if (existsInDom('humedad2')) {
+          document.getElementById("humedad2").innerHTML = obj.valor;
+        }
+        break;
+      case 'humedad3':
+        if (existsInDom('humedad3')) {
+          document.getElementById("humedad3").innerHTML = obj.valor;
+        }
+        break;
+      case 'temperatura1':
+        if (existsInDom('temperatura1')) {
+          document.getElementById("temperatura1").innerHTML = obj.valor;
+        }
+        break;
+      case 'temperatura2':
+        if (existsInDom('temperatura2')) {
+          document.getElementById("temperatura2").innerHTML = obj.valor;
+        }
+        break;
+      case 'temperatura3':
+        if (existsInDom('temperatura3')) {
+          document.getElementById("temperatura3").innerHTML = obj.valor;
+        }
+        break;
+      case 'sector1':
+        if (existsInDom('sector1')) {
+          document.getElementById("sector1").innerHTML = obj.valor;
+        }
+        break;
+      case 'sector2':
+        if (existsInDom('sector2')) {
+          document.getElementById("sector2").innerHTML = obj.valor;
+        }
+        break;
+      case 'sector3':
+        if (existsInDom('sector3')) {
+          document.getElementById("sector3").innerHTML = obj.valor;
         }
         break;
 
