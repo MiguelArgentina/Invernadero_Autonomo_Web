@@ -97,13 +97,13 @@
 <h3>Configuracion del riego automatico</h3>
 <br><br>
 <div class="textos">Iniciar riego al:
-  <input class="text" type="text" name="hum-min" value="60">
-  % de Humedad
+  <input id="humedadsuelominima" class="text" type="text" name="hum-min" value="00">
+  % de humedad de la tierra
 </div>
 <br><br>
 <div class="textos">Cortar riego al:
-  <input class="text" type="text" name="hum-max" value="90">
-  % de Humedad
+  <input id="humedadsuelomaxima" class="text" type="text" name="hum-max" value="00">
+  % de humedad de la tierra
 </div>
 <br>
 </section>
@@ -114,12 +114,12 @@
 <h3>Alarmas por temperatura y humedad ambiente</h3>
 <br><br>
 <div class="textos">Temp. maxima:
-  <input class="text2" type="text" name="temp-max" value="40">
+  <input id="temperaturamaxima" class="text2" type="text" name="temp-max" value="00">
   &#8451;
 </div>
 <br><br>
 <div class="textos">Temp. minima:
-  <input class="text2" type="text" name="temp-min" value="10">
+  <input id="temperaturaminima" class="text2" type="text" name="temp-min" value="00">
   &#8451;
 </div>
 <br>
@@ -127,11 +127,15 @@
 <br>
 <section class="humedad">
 <br>
-<div class="textos">Hum. maxima:
-  <input class="text3" type="text" name="hum-max" value="70">
+<div class="textos">Hum. amb. maxima:
+  <input id="humedadambientemaxima" class="text3" type="text" name="hum-amb-max" value="00">
   %
 </div>
-<br>
+<br><br>
+<div class="textos">Hum. amb. minima:
+  <input id="humedadambienteminima" class="text3" type="text" name="hum-amb-min" value="00">
+  %
+</div>
 </section>
 <br><br>
 <a class="update-button"  href="/update">Actualizar datos</a>
