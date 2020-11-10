@@ -14,16 +14,28 @@ function loadParametersOnDom() {
 
 }
 
+function actualizarConfig(ref, formId) {
+  postJsonToServer(formId);
+}
 
+function postJsonToServer(formId) {
+  var data = $("#" + formId).serialize();
+  console.log("data from "+ formId);
+  console.log(data);
+  //https://serverregistrodatos.000webhostapp.com/
+  $.post("updatesettings.php",
+    data,
+    function(result) {
+      console.log(result);
+      //console.alert(result);
+      reRenderPageWithPhpEcho(result);
+    }
+  );
+}
 
 
 function ejecutarAccion(ref, bomba, formId, light) {
-  /*var form = $(ref).parent();
-  var hval = form.find('type[hidden]').val();
-  var fid = form.attr('id');
-  */
   regarBomba(bomba, formId);
-
 }
 
 function regarBomba(bomba, formId) {
@@ -37,16 +49,21 @@ function regarBomba(bomba, formId) {
   //console.log(x.value);
   //console.log($("#"+formId).serialize());
 
-  var data = $("#" + formId).serialize();
-  //https://serverregistrodatos.000webhostapp.com/
-  $.post("updatesettings.php",
-    data,
-    function(result) {
-      console.log(result);
-      //console.alert(result);
-      reRenderPageWithPhpEcho(result);
-    }
-  );
+  postJsonToServer(formId);
+  /*
+    var data = $("#" + formId).serialize();
+    //https://serverregistrodatos.000webhostapp.com/
+    $.post("updatesettings.php",
+      data,
+      function(result) {
+        console.log(result);
+        //console.alert(result);
+        reRenderPageWithPhpEcho(result);
+      }
+    );
+  */
+
+
   //window.location.reload();
 }
 

@@ -1,144 +1,173 @@
-<!DOCTYPE HTML><html>
+<!DOCTYPE HTML>
+<html>
+
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
   <style>
-  body{
-    margin-left: 5%;
-    margin-right: 5%;
-    background-color: #f0f4c3;
-  }
-  h2, h3{
-    text-align: center;;
-  }
-  .back-button{
-    padding: 8px;
-    height:20px;
-    font-family:sans-serif;
-    margin-right: 5px;
-    background-color: #eee;
-    border:none;
-    border-style:groove;
-    text-decoration: none;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 10px;
+    body {
+      margin-left: 5%;
+      margin-right: 5%;
+      background-color: #f0f4c3;
+    }
 
-  }
-  .update-button
-  {
-    padding: 10px;
-    text-decoration: none;
-    border-style:ridge;
-    border-radius: 10px;
-    background-color: #c5e1a5;
-    margin-left: 10%;
-    margin-right: 10%;
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-    color:#00695c;
-  }
-  input
-  {
-    width: 30px;
-    height: 18px;
-    font-size: 16px;
-    text-align: center;
-    font-family: sans-serif;
-    border-radius: 10px;
-    border: 2px solid #00;
-    padding: 6px;
-  }
-  input.text:focus {
-    background-color: #bbdefb;
-    color: #0d47a1;
-    border: 2px solid #0d47a1;
+    h2,
+    h3 {
+      text-align: center;
+      ;
+    }
 
-  }
-  input.text2:focus {
-    background-color: #b2dfdb;
-    color: #004d40;
-    border: 2px solid #004d40;
-  }
-  input.text3:focus {
-    background-color: #ffccbc;
-    color: #bf360c;
-    border: 2px solid #bf360c;
-  }
-  .riego{
-    background-color: #e6ee9c;
-    color:#303f9f;
-    padding: 4px;
-    border-radius: 15px;
-  }
+    .back-button {
+      padding: 8px;
+      height: 20px;
+      font-family: sans-serif;
+      margin-right: 5px;
+      background-color: #eee;
+      border: none;
+      border-style: groove;
+      text-decoration: none;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 10px;
 
-  .temperatura{
-    background-color: #e6ee9c;
-    color:#b71c1c;
-    padding: 4px;
-    border-radius: 15px;
-  }
+    }
 
-  .humedad{
-    background-color: #e6ee9c;
-    color:#1b5e20;
-    padding: 4px;
-    border-radius: 15px;
-  }
+    input {
+      width: 30px;
+      height: 18px;
+      font-size: 16px;
+      text-align: center;
+      font-family: sans-serif;
+      border-radius: 10px;
+      border: 2px solid #00;
+      padding: 6px;
+    }
+
+    input.text:focus {
+      background-color: #bbdefb;
+      color: #0d47a1;
+      border: 2px solid #0d47a1;
+
+    }
+
+    input.text2:focus {
+      background-color: #b2dfdb;
+      color: #004d40;
+      border: 2px solid #004d40;
+    }
+
+    input.text3:focus {
+      background-color: #ffccbc;
+      color: #bf360c;
+      border: 2px solid #bf360c;
+    }
+
+    .riego {
+      background-color: #e6ee9c;
+      color: #303f9f;
+      padding: 4px;
+      border-radius: 15px;
+    }
+
+    .temperatura {
+      background-color: #e6ee9c;
+      color: #b71c1c;
+      padding: 4px;
+      border-radius: 15px;
+    }
+
+    .humedad {
+      background-color: #e6ee9c;
+      color: #1b5e20;
+      padding: 4px;
+      border-radius: 15px;
+    }
+
+    .update-button {
+      padding: 10px;
+      border-style: ridge;
+      border-radius: 10px;
+      background-color: #c5e1a5;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 20px;
+      color: #00695c;
+      display: block;
+      align-self: center;
+      width: 60%;
+      height: 20%;
+    }
   </style>
 </head>
+
 <body>
-<h2>Invernadero autonomo</h2>
-<span class="config-refresh">
-<a class="back-button" style="float:left; font-weight: bold; color:#00695c" href="/index.html">Volver</a>
-</span>
-<br><br><br>
-<section class="riego">
-<h3>Configuracion del riego automatico</h3>
-<br><br>
-<div class="textos">Iniciar riego al:
-  <input id="humedadsuelominima" class="text" type="text" name="hum-min" value="00">
-  % de humedad de la tierra
-</div>
-<br><br>
-<div class="textos">Cortar riego al:
-  <input id="humedadsuelomaxima" class="text" type="text" name="hum-max" value="00">
-  % de humedad de la tierra
-</div>
-<br>
-</section>
 
-<br>
-<section class="temperatura">
-<br>
-<h3>Alarmas por temperatura y humedad ambiente</h3>
-<br><br>
-<div class="textos">Temp. maxima:
-  <input id="temperaturamaxima" class="text2" type="text" name="temp-max" value="00">
-  &#8451;
-</div>
-<br><br>
-<div class="textos">Temp. minima:
-  <input id="temperaturaminima" class="text2" type="text" name="temp-min" value="00">
-  &#8451;
-</div>
-<br>
-</section>
-<br>
-<section class="humedad">
-<br>
-<div class="textos">Hum. amb. maxima:
-  <input id="humedadambientemaxima" class="text3" type="text" name="hum-amb-max" value="00">
-  %
-</div>
-<br><br>
-<div class="textos">Hum. amb. minima:
-  <input id="humedadambienteminima" class="text3" type="text" name="hum-amb-min" value="00">
-  %
-</div>
-</section>
-<br><br>
-<a class="update-button"  href="/update">Actualizar datos</a>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="scripts/scripts.js?a=123456" type="text/javascript"></script>
 
-<br>
+  <h2>Invernadero autonomo</h2>
+  <span class="config-refresh">
+    <a class="back-button" style="float:left; font-weight: bold; color:#00695c" href="/index.html">Volver</a>
+  </span>
+  <br><br><br>
+  <form id="formconfiguracion">
+    <section class="riego">
+
+
+
+      <h3>Configuracion del riego automatico</h3>
+      <br><br>
+      <div class="textos">Iniciar riego al:
+        <input id="humedadsuelominima" class="text" type="number" name="humedadsuelominima" onClick="this.select()" value="00">
+        % de humedad de la tierra
+      </div>
+      <br><br>
+      <div class="textos">Cortar riego al:
+        <input id="humedadsuelomaxima" class="text" type="number" name="humedadsuelomaxima" onClick="this.select()" value="00">
+        % de humedad de la tierra
+      </div>
+      <br>
+    </section>
+
+    <br>
+    <section class="temperatura">
+      <br>
+      <h3>Alarmas por temperatura y humedad ambiente</h3>
+      <br><br>
+      <div class="textos">Temp. maxima:
+        <input id="temperaturamaxima" class="text2" type="number" name="temperaturamaxima" onClick="this.select()" value="00">
+        &#8451;
+      </div>
+      <br><br>
+      <div class="textos">Temp. minima:
+        <input id="temperaturaminima" class="text2" type="number" name="temperaturaminima" onClick="this.select()" value="00">
+        &#8451;
+      </div>
+      <br>
+    </section>
+    <br>
+    <section class="humedad">
+      <br>
+      <div class="textos">Hum. amb. maxima:
+        <input id="humedadambientemaxima" class="text3" type="number" name="humedadambientemaxima" onClick="this.select()" value="00">
+        %
+      </div>
+      <br><br>
+      <div class="textos">Hum. amb. minima:
+        <input id="humedadambienteminima" class="text3" type="number" name="humedadambienteminima" onClick="this.select()" value="00">
+        %
+      </div>
+    </section>
+  </form>
+  <br><br>
+  <div>
+    <input id="btn-config-update" type="button" class="update-button" value="Actualizar datos" onclick="actualizarConfig(this,'formconfiguracion')">
+  </div>
+  <br>
+
+  <script type="text/javascript">
+    loadParametersOnDom();
+  </script>
+
 </body>

@@ -1,27 +1,27 @@
 [{
   "variable": "humedadsuelomaxima",
-  "valor": null
+  "valor": "12"
 }, {
   "variable": "humedadsuelominima",
-  "valor": null
+  "valor": "34"
 }, {
   "variable": "temperaturamaxima",
-  "valor": null
+  "valor": "54"
 }, {
   "variable": "temperaturaminima",
-  "valor": null
+  "valor": "12"
 }, {
   "variable": "humedadambientemaxima",
-  "valor": null
+  "valor": "12"
 }, {
   "variable": "humedadambienteminima",
-  "valor": null
+  "valor": "54"
 }, {
   "variable": "bomba1",
-  "valor": "1"
+  "valor": "0"
 }, {
   "variable": "bomba2",
-  "valor": "1"
+  "valor": "0"
 }, {
   "variable": "bomba3",
   "valor": "0"

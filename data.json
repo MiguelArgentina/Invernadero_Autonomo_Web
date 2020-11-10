@@ -1,28 +1,28 @@
 [{
-  "sensor": "temperatura1",
-  "valor": "1"
+  "variable": "temperatura1",
+  "valor": "10"
 }, {
-  "sensor": "temperatura2",
-  "valor": "2"
+  "variable": "temperatura2",
+  "valor": "20"
 }, {
-  "sensor": "temperatura3",
-  "valor": "3"
+  "variable": "temperatura3",
+  "valor": "30"
 }, {
-  "sensor": "sector1",
+  "variable": "sector1",
   "valor": "40"
 }, {
-  "sensor": "sector2",
+  "variable": "sector2",
   "valor": "50"
 }, {
-  "sensor": "sector3",
+  "variable": "sector3",
   "valor": "60"
 }, {
-  "sensor": "humedad1",
-  "valor": "4"
+  "variable": "humedad1",
+  "valor": "77"
 }, {
-  "sensor": "humedad2",
-  "valor": "5"
+  "variable": "humedad2",
+  "valor": "88"
 }, {
-  "sensor": "humedad3",
-  "valor": "6"
+  "variable": "humedad3",
+  "valor": "99"
 }]
