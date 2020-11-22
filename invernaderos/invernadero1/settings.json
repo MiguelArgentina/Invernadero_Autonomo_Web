@@ -1,0 +1,28 @@
+[{
+  "variable": "humedadsuelomaxima",
+  "valor": "12"
+}, {
+  "variable": "humedadsuelominima",
+  "valor": "34"
+}, {
+  "variable": "temperaturamaxima",
+  "valor": "54"
+}, {
+  "variable": "temperaturaminima",
+  "valor": "12"
+}, {
+  "variable": "humedadambientemaxima",
+  "valor": "12"
+}, {
+  "variable": "humedadambienteminima",
+  "valor": "54"
+}, {
+  "variable": "bomba1",
+  "valor": "0"
+}, {
+  "variable": "bomba2",
+  "valor": "0"
+}, {
+  "variable": "bomba3",
+  "valor": "0"
+}]

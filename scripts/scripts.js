@@ -1,17 +1,15 @@
 function loadParametersOnDom() {
-  $.get("pulldata.php", {}, function(result) {
+  $.get("phpScripts/pulldata.php", {}, function(result) {
     console.log("pullData:");
     console.log(result);
     reRenderPageWithPhpEcho(result);
   });
 
-  $.get("pullsettings.php", {}, function(result) {
+  $.get("phpScripts/pullsettings.php", {}, function(result) {
     console.log("pullSettings:");
     console.log(result);
     reRenderPageWithPhpEcho(result);
   });
-
-
 }
 
 function actualizarConfig(ref, formId) {
@@ -23,7 +21,7 @@ function postJsonToServer(formId) {
   console.log("data from "+ formId);
   console.log(data);
   //https://serverregistrodatos.000webhostapp.com/
-  $.post("updatesettings.php",
+  $.post("phpScripts/updatesettings.php",
     data,
     function(result) {
       console.log(result);

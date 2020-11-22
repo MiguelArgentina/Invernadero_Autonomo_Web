@@ -1,0 +1,28 @@
+[{
+  "variable": "temperatura1",
+  "valor": "10"
+}, {
+  "variable": "temperatura2",
+  "valor": "20"
+}, {
+  "variable": "temperatura3",
+  "valor": "30"
+}, {
+  "variable": "sector1",
+  "valor": "40"
+}, {
+  "variable": "sector2",
+  "valor": "50"
+}, {
+  "variable": "sector3",
+  "valor": "60"
+}, {
+  "variable": "humedad1",
+  "valor": "77"
+}, {
+  "variable": "humedad2",
+  "valor": "88"
+}, {
+  "variable": "humedad3",
+  "valor": "99"
+}]

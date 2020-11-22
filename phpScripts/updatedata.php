@@ -10,7 +10,7 @@ $sector1=$_POST["sector1"]?? null;
 $sector2=$_POST["sector2"]?? null;
 $sector3=$_POST["sector3"]?? null;
 
-$jsonString = file_get_contents('data.json');
+$jsonString = file_get_contents('../data/data.json');
 $data = json_decode($jsonString, true);
 
 
@@ -67,7 +67,7 @@ foreach ($data as $key => $entry) {
 }
 
 $newJsonString = json_encode($data);
-file_put_contents('data.json', $newJsonString);
+file_put_contents('../data/data.json', $newJsonString);
 
-echo $jsonString = file_get_contents('data.json');
+echo $jsonString = file_get_contents('../data/data.json');
 ?>

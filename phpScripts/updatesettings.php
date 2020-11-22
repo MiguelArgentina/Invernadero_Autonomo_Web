@@ -16,7 +16,7 @@ $bomba1=$_POST["bomba1"]?? null;
 $bomba2=$_POST["bomba2"]?? null;
 $bomba3=$_POST["bomba3"]?? null;
 
-$jsonString = file_get_contents('settings.json');
+$jsonString = file_get_contents('../data/settings.json');
 $data = json_decode($jsonString, true);
 
 
@@ -61,8 +61,8 @@ foreach ($data as $key => $entry) {
 }
 
 $newJsonString = json_encode($data);
-file_put_contents('settings.json', $newJsonString);
+file_put_contents('../data/settings.json', $newJsonString);
 
-echo $jsonString = file_get_contents('settings.json');
+echo $jsonString = file_get_contents('../data/settings.json');
 
 ?>
