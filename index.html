@@ -4,6 +4,7 @@
   <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="refresh" content="30" />
+  <meta name="google-signin-client_id" content="371644074979-3r8h8k0ma4rgjujv6b4sgh9tdqcdttgh.apps.googleusercontent.com">
 <style>
 
 body{
@@ -108,16 +109,24 @@ grid-row: 1 / span 3;
 
 </head>
 <body>
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="scripts/scripts.js" type="text/javascript"></script>
+  <script src="https://apis.google.com/js/client:platform.js?onload=renderButton" async defer></script>
+
+
+  <!-- Display Google sign-in button -->
+<div id="gSignIn"></div>
+
+<!-- Show the user profile details -->
+<div class="userContent" style="display: none;"></div>
+
+
   <h2>Invernadero autonomo</h2>
 <span class="config-refresh">
   <a class="refresh-button" style="float:left; color:#0277bd" href="./config.html">Configurar</a>
 <a class="refresh-button" style="float:right; font-weight: bold; color:#00695c" onclick="loadParametersOnDom()">Actualizar datos</a>
 
 </span>
-
-<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-<script src="scripts/scripts.js" type="text/javascript"></script>
-
 
 
 <span id="result"></span>
