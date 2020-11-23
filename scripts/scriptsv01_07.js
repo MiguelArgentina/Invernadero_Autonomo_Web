@@ -1,13 +1,13 @@
 function loadParametersOnDom() {
   $.get("phpScripts/pulldata.php", {}, function(result) {
     console.log("pullData:");
-    console.log(result);
+    //console.log(result);
     reRenderPageWithPhpEcho(result);
   });
 
   $.get("phpScripts/pullsettings.php", {}, function(result) {
     console.log("pullSettings:");
-    console.log(result);
+    //console.log(result);
     reRenderPageWithPhpEcho(result);
   });
 }
@@ -24,7 +24,7 @@ function postJsonToServer(formId) {
   $.post("phpScripts/updatesettings.php",
     data,
     function(result) {
-      console.log(result);
+      //console.log(result);
       //console.alert(result);
       reRenderPageWithPhpEcho(result);
     }
@@ -255,8 +255,8 @@ function onSuccess(googleUser) {
 
 // Save user data to the database
 function saveUserData(userData){
-  alert(userData);
-    $.post('userData.php', { oauth_provider:'google', userData: JSON.stringify(userData) });
+  //console.log(JSON.stringify(userData));
+    $.post('phpScripts/userData.php', { oauth_provider:'google', userData: JSON.stringify(userData) });
 }
 
 // Sign-in failure callback

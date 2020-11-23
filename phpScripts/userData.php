@@ -1,9 +1,11 @@
 <?php
 // Load the database configuration file
-require_once 'dbConfig.php';
+require_once '../phpScripts/dbConfig.php';
+
 
 // Get and decode the POST data
 $userData = json_decode($_POST['userData']);
+
 
 if(!empty($userData)){
     // The user's profile info
@@ -18,7 +20,7 @@ if(!empty($userData)){
     $link       = !empty($userData->link)?$userData->link:'';
 
     // Check whether the user data already exist in the database
-    $query = "SELECT * FROM users WHERE oauth_provider = '".$oauth_provider."' AND oauth_uid = '".$oauth_uid."'";
+    $query = "SELECT * FROM users WHERE oauth_provider = '".$oauth_provider."' AND email = '".$email."'";
     $result = $db->query($query);
 
     if($result->num_rows > 0){
@@ -33,4 +35,7 @@ if(!empty($userData)){
 
     return true;
 }
+
+
+
 ?>
