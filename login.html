@@ -1,0 +1,77 @@
+<html lang="en">
+  <head>
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="371644074979-3r8h8k0ma4rgjujv6b4sgh9tdqcdttgh.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<style >
+.wrapper {
+	width: 400px;
+	height: 200px;
+
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	margin: auto;
+
+}
+</style>
+
+  </head>
+  <body>
+      <div class="wrapper">
+      <div id="userContent">Acceda con su cuenta de Google</div>
+      <br><br><br>
+      <div id="g-signin2" class="g-signin2" data-onsuccess="onSignIn" data-onfailure="onFailure" data-theme="dark"></div>
+
+      </div>
+    <script>
+
+      function onFailure() {
+          console.error('Falló el inicio de seesión');
+      }
+
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+
+
+        // Display the user details
+        var profileHTML = '<h3>Hola '+ profile.getGivenName()+'! <a href="javascript:void(0);" onclick="signOut();">Sign out</a></h3>';
+
+        profileHTML += '<img src="'+ profile.getImageUrl()+'"/><p><b>Google ID: </b>'+ profile.getId()+'</p><p><b>Nombre: </b>'+ profile.getName()+'</p><p><b>Email: </b>'+profile.getEmail();
+
+        document.getElementById("userContent").innerHTML = profileHTML;
+        document.getElementById("g-signin2").style.display = "none";
+        document.getElementById("userContent").style.display = "block";
+         document.location.href = '/index.html';
+      }
+
+      // Sign out the user
+function signOut() {
+var auth2 = gapi.auth2.getAuthInstance();
+auth2.signOut().then(function () {
+    document.getElementById("userContent").innerHTML  = 'Acceda con su cuenta de Google';
+    document.getElementById("userContent").style.display = "none";
+    document.getElementById("g-signin2").style.display = "block";
+    document.location.href = '/login.html';
+
+
+});
+}
+    </script>
+  </body>
+</html>

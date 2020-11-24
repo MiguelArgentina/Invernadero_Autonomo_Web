@@ -215,21 +215,82 @@ $("#formbomba1").submit( function() {
 
 //Google Sing-in functions:
 
+
+
+function onSuccess(googleUser) {
+  console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
+
+  // Display the user details
+        var profileHTML = '<h3>Welcome '+ googleUser.getBasicProfile().getGivenName()+'! <a href="javascript:void(0);" onclick="signOut();">Sign out</a></h3>';
+        profileHTML += '<img src="'+googleUser.getBasicProfile().getImageUrl()+'"/><p><b>Google ID: </b>'+googleUser.getBasicProfile().getId()+'</p><p><b>Name: </b>'+googleUser.getBasicProfile().getName()+'</p><p><b>Email: </b>'+googleUser.getBasicProfile().getEmail();
+        document.getElementById("userContent").innerHTML = profileHTML;
+        document.getElementById("my-signin2").style.display = "none";
+        document.getElementById("userContent").style.display = "block";
+// The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        //alert(id_token);
+        console.log("id Token:");
+        console.log(id_token);
+        document.location.href = '/index.html';
+
+}
+function onFailure(error) {
+    var profileHTML = error;
+    document.location.href = '/login.html';
+    document.getElementById("userContent").innerHTML = profileHTML;
+        document.getElementById("userContent").style.display = "block";
+  console.log(error);
+
+}
+
+
+// Sign out the user
+function signOut() {
+var auth2 = gapi.auth2.getAuthInstance();
+auth2.signOut().then(function () {
+    document.getElementById("userContent").innerHTML  = '';
+    document.getElementById("userContent").style.display = "none";
+    document.getElementById("my-signin2").style.display = "block";
+    document.location.href = '/index.html';
+    document.getElementById("userContent").innerHTML  = '';
+    document.getElementById("userContent").style.display = "none";
+    document.getElementById("my-signin2").style.display = "block";
+
+});
+}
+
+
+
+
+
+
+
+// Sign in mtehod from https://developers.google.com/identity/sign-in/web/sign-in
+function onSignIn2(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+  //document.getElementById('sign_out_button').style.visibility = 'visible';
+
+}
+
 // Render Google Sign-in button
-function renderButton() {
+function renderButton2() {
     gapi.signin2.render('gSignIn', {
         'scope': 'profile email',
         'width': 240,
         'height': 30,
         'longtitle': true,
         'theme': 'dark',
-        'onsuccess': onSuccess,
-        'onfailure': onFailure
+        'onsuccess': onSuccess2,
+        'onfailure': onFailure2
     });
 }
 
 // Sign-in success callback
-function onSuccess(googleUser) {
+function onSuccess2(googleUser) {
     // Get the Google profile data (basic)
     //var profile = googleUser.getBasicProfile();
 
@@ -260,12 +321,12 @@ function saveUserData(userData){
 }
 
 // Sign-in failure callback
-function onFailure(error) {
+function onFailure2(error) {
     alert(error);
 }
 
 // Sign out the user
-function signOut() {
+function signOut2() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
         document.getElementsByClassName("userContent")[0].innerHTML = '';

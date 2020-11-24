@@ -2,9 +2,16 @@
 <html>
 
 <head>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
+
+  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  <script src="scripts/scriptsv01_21.js?a=123" type="text/javascript"></script>
+  <script src="https://apis.google.com/js/platform.js"></script>
+
+
   <style>
     body {
       margin-left: 5%;
@@ -103,8 +110,79 @@
 
 <body>
 
-  <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-  <script src="scripts/scripts.js?a=123456" type="text/javascript"></script>
+
+  <script>
+
+
+
+
+
+      var auth2;
+var googleUser; // The current user
+
+gapi.load('auth2', function(){
+    auth2 = gapi.auth2.init({
+        client_id: '371644074979-3r8h8k0ma4rgjujv6b4sgh9tdqcdttgh.apps.googleusercontent.com'
+    });
+    auth2.attachClickHandler('g-signin2', {}, onSuccess, onFailure);
+
+    auth2.isSignedIn.listen(signinChanged);
+    auth2.currentUser.listen(userChanged); // This is what you use to listen for user changes
+});
+
+var signinChanged = function (val) {
+    console.log('Signin state changed to ', val);
+    let googleUser = auth2.currentUser.get();
+    let profile = googleUser.getBasicProfile();
+    showCurrentUserInfo(profile)
+};
+
+var onSuccess = function(user) {
+    console.log('Signed in as ' + user.getBasicProfile().getName());
+
+
+
+
+
+    // Redirect somewhere
+};
+
+var onFailure = function(error) {
+    console.log(error);
+};
+
+function signOut() {
+    auth2.signOut().then(function () {
+        console.log('User signed out.');
+        document.location.href = '/login.html';
+    });
+}
+
+var userChanged = function (user) {
+    if(user.getId()){
+      // Do something here
+    }
+};
+
+ function showCurrentUserInfo(profile){
+     // Display the user details
+      var profileHTML = '<h3>Hola ' + profile.getGivenName() + '! <a href="javascript:void(0);" onclick="signOut();">Sign out</a></h3>';
+      profileHTML += '<img src="' + profile.getImageUrl() + '"/><p><b>Google ID: </b>' + profile.getId() + '</p><p><b>Nombre: </b>' + profile.getName() + '</p><p><b>Email: </b>' + profile.getEmail();
+      document.getElementById("userContent").innerHTML = profileHTML;
+      document.getElementById("g-signin2").style.display = "none";
+      document.getElementById("userContent").style.display = "block";
+
+ }
+
+
+  </script>
+   <div id="g-signin2" class="g-signin2" data-onsuccess="onSignIn" data-onfailure="onFailure" data-theme="dark"></div>
+
+
+  <!-- Show the user profile details -->
+  <div id="userContent" class="userContent" style="display: none;"></div>
+
+  <br><br>
 
   <h2>Invernadero autonomo</h2>
   <span class="config-refresh">
@@ -160,14 +238,18 @@
       </div>
     </section>
   </form>
+
   <br><br>
   <div>
     <input id="btn-config-update" type="button" class="update-button" value="Actualizar datos" onclick="actualizarConfig(this,'formconfiguracion')">
   </div>
   <br>
 
+
   <script type="text/javascript">
-    loadParametersOnDom();
+    //loadParametersOnDom();
   </script>
 
 </body>
+
+</html>
